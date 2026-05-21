@@ -1,40 +1,513 @@
-<!doctype html>
-<html lang="pt-BR">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Furacao | Hacka P1 Informatica Subsequente</title>
-    <meta name="description" content="Projeto Furacao da Hacka P1 Informatica Subsequente em preparacao." />
-    <link rel="icon" href="data:," />
-    <style>
-      :root { color-scheme: light; font-family: "Segoe UI", Arial, sans-serif; color: #291319; background: #fff4f3; }
-      * { box-sizing: border-box; }
-      body { margin: 0; background: linear-gradient(135deg, #fee2e2, #fff 45%, #fde68a); }
-      main { display: grid; width: min(920px, calc(100% - 2rem)); min-height: 100vh; margin: 0 auto; align-content: center; padding: 2rem 0; }
-      section { border: 1px solid #fecaca; border-radius: 8px; padding: clamp(1rem, 4vw, 2.5rem); background: rgba(255,255,255,.94); box-shadow: 0 20px 60px rgba(69,10,10,.12); }
-      p { color: #7c4b50; line-height: 1.6; }
-      .eyebrow { margin: 0; color: #b91c1c; font-size: .9rem; font-weight: 900; text-transform: uppercase; }
-      h1 { margin: .65rem 0 1rem; color: #7f1d1d; font-size: clamp(2.4rem, 7vw, 5rem); line-height: 1; letter-spacing: 0; }
-      ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; margin: 1.5rem 0 0; padding: 0; list-style: none; }
-      li { border-left: 4px solid #f97316; border-radius: 8px; padding: .8rem; background: #fff8f5; color: #291319; font-weight: 800; }
-      li span { display: block; color: #b91c1c; font-size: .85rem; font-weight: 900; }
-      @media (max-width: 620px) { ul { grid-template-columns: 1fr; } }
-    </style>
-  </head>
-  <body>
-    <main>
-      <section>
-        <p class="eyebrow">Hacka 2026 - P1 Informatica Subsequente</p>
-        <h1>Furacao</h1>
-        <p>Projeto em preparacao: portal de informacoes para os eventos da escola.</p>
-        <ul>
-          <li><span>Gerente de Ideias</span>Nadir</li>
-          <li><span>HTML</span>Adriana</li>
-          <li><span>CSS</span>Rafael</li>
-          <li><span>JavaScript</span>Marinalda</li>
-          <li><span>Funcao pendente</span>Darlene</li>
-        </ul>
-      </section>
-    </main>
-  </body>
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal de Eventos — Equipe Furacão</title>
+  <meta name="description" content="Central de comunicação e inscrição de eventos escolares da Equipe Furacão - EETEPA Vilhena Alves." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌪️</text></svg>" />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  
+  <!-- Estilo Local -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- CABEÇALHO E NAVEGAÇÃO -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="#" class="brand">
+        <div class="logo-circle">
+          <i class="fa-solid fa-tornado"></i>
+        </div>
+        <span class="brand-name">Furacão</span>
+      </a>
+      
+      <ul class="nav-menu">
+        <li><a href="#" class="nav-link active">Home</a></li>
+        <li><a href="#eventos" class="nav-link">Eventos</a></li>
+        <li><a href="#galeria" class="nav-link">Galeria</a></li>
+        <li><a href="#inscricoes" class="nav-link">Inscrições</a></li>
+        <li><a href="#equipe" class="nav-link">Equipe</a></li>
+      </ul>
+      
+      <button class="theme-toggle-btn" id="theme-toggle" aria-label="Alternar Tema">
+        <i class="fa-solid fa-sun" id="theme-icon"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- SEÇÃO HERO (INTRODUÇÃO) -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-tagline">
+          <i class="fa-solid fa-bolt"></i>
+          <span>Equipe Furacão • EETEPA Vilhena Alves</span>
+        </div>
+        <h1 class="hero-title">
+          Conectando a Escola através de <span>Grandes Eventos</span>
+        </h1>
+        <p class="hero-desc">
+          Bem-vindo ao canal oficial de eventos da Equipe Furacão. Aqui você acompanha nosso calendário de gincanas, feiras de ciências, palestras e atividades práticas. Participe, colabore e registre suas melhores memórias escolares!
+        </p>
+        <div class="hero-buttons">
+          <a href="#eventos" class="btn btn-primary">
+            <i class="fa-regular fa-calendar-days"></i> Ver Eventos
+          </a>
+          <a href="#inscricoes" class="btn btn-secondary">
+            <i class="fa-solid fa-signature"></i> Inscreva seu Projeto
+          </a>
+        </div>
+      </div>
+      
+      <div class="hero-graphic">
+        <div class="glow-circle"></div>
+        <div class="event-banner-mockup">
+          <div class="mockup-header">
+            <div class="mockup-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <span class="mockup-badge">Em Destaque</span>
+          </div>
+          <div class="mockup-image-placeholder">
+            <i class="fa-solid fa-meteor"></i>
+            <span>Gincana Cultural 2026</span>
+          </div>
+          <div class="mockup-details">
+            <h3>Grande Final da Gincana</h3>
+            <div class="mockup-meta">
+              <span><i class="fa-regular fa-calendar"></i> 26 Jun</span>
+              <span><i class="fa-regular fa-clock"></i> 09:00</span>
+              <span><i class="fa-solid fa-location-dot"></i> Pátio Central</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO CALENDÁRIO DE EVENTOS -->
+  <section class="calendar-section" id="eventos">
+    <div class="container">
+      <h2>Próximos Eventos</h2>
+      <div class="calendar-grid">
+        
+        <!-- Evento 1 -->
+        <div class="calendar-card type-cultural" data-event-id="feira-ciencias">
+          <div class="event-date-box">
+            <span class="event-day">12</span>
+            <span class="event-month">Jun</span>
+          </div>
+          <div class="event-info">
+            <span class="event-badge">Ciências</span>
+            <h3>Feira de Ciências e Tecnologia</h3>
+            <p class="event-desc">
+              Exposição de projetos de inovação tecnológica, robótica, biotecnologia e sustentabilidade desenvolvidos por alunos dos cursos técnicos e médio.
+            </p>
+            <div class="event-footer">
+              <span><i class="fa-regular fa-clock"></i> 08:00 - 17:00</span>
+              <span><i class="fa-solid fa-location-dot"></i> Quadra e Laboratórios</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Evento 2 -->
+        <div class="calendar-card type-gincana" data-event-id="gincana-cultural">
+          <div class="event-date-box">
+            <span class="event-day">26</span>
+            <span class="event-month">Jun</span>
+          </div>
+          <div class="event-info">
+            <span class="event-badge">Cultural</span>
+            <h3>Gincana Cultural Furacão</h3>
+            <p class="event-desc">
+              Um dia inteiro de integração e dinamismo, com desafios artísticos, competições intelectuais e arrecadação de donativos promovendo o espírito comunitário.
+            </p>
+            <div class="event-footer">
+              <span><i class="fa-regular fa-clock"></i> 09:00 - 18:00</span>
+              <span><i class="fa-solid fa-location-dot"></i> Pátio e Auditório</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Evento 3 -->
+        <div class="calendar-card" data-event-id="noite-tec">
+          <div class="event-date-box">
+            <span class="event-day">10</span>
+            <span class="event-month">Jul</span>
+          </div>
+          <div class="event-info">
+            <span class="event-badge">Tecnologia</span>
+            <h3>Noite Tec Info</h3>
+            <p class="event-desc">
+              Mostra de projetos integradores do Curso de Informática Subsequente. Apresentações de softwares, projetos de redes e palestras com profissionais locais.
+            </p>
+            <div class="event-footer">
+              <span><i class="fa-regular fa-clock"></i> 18:30 - 22:00</span>
+              <span><i class="fa-solid fa-location-dot"></i> Lab TI & Auditório</span>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO MURAL DE FOTOS (GALERIA) -->
+  <section class="gallery-section" id="galeria">
+    <div class="container">
+      <h2>Mural de Memórias</h2>
+      
+      <div class="gallery-filters">
+        <button class="gallery-filter-btn active" data-filter="all">Todos</button>
+        <button class="gallery-filter-btn" data-filter="gincanas">Gincanas</button>
+        <button class="gallery-filter-btn" data-filter="feiras">Feiras</button>
+        <button class="gallery-filter-btn" data-filter="aulas">Aulas Práticas</button>
+      </div>
+      
+      <div class="gallery-grid">
+        
+        <!-- Item 1 -->
+        <div class="gallery-item" data-category="gincanas">
+          <div class="gallery-img-wrapper">
+            <div class="gallery-svg-art">
+              <i class="fa-solid fa-flag-checkered"></i>
+            </div>
+          </div>
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Gincanas</span>
+            <h4>Abertura da Gincana</h4>
+            <p>O início contagiante das provas e apresentações de torcidas de 2025.</p>
+          </div>
+        </div>
+        
+        <!-- Item 2 -->
+        <div class="gallery-item" data-category="feiras">
+          <div class="gallery-img-wrapper">
+            <div class="gallery-svg-art">
+              <i class="fa-solid fa-robot"></i>
+            </div>
+          </div>
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Feiras</span>
+            <h4>Protótipo de Robótica</h4>
+            <p>Demonstração pública de projetos baseados em Arduino na feira de ciências.</p>
+          </div>
+        </div>
+        
+        <!-- Item 3 -->
+        <div class="gallery-item" data-category="aulas">
+          <div class="gallery-img-wrapper">
+            <div class="gallery-svg-art">
+              <i class="fa-solid fa-network-wired"></i>
+            </div>
+          </div>
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Aulas Práticas</span>
+            <h4>Configuração de Redes</h4>
+            <p>Alunos do subsequente praticando crimpagem e testes de conectividade física.</p>
+          </div>
+        </div>
+        
+        <!-- Item 4 -->
+        <div class="gallery-item" data-category="feiras">
+          <div class="gallery-img-wrapper">
+            <div class="gallery-svg-art">
+              <i class="fa-solid fa-leaf"></i>
+            </div>
+          </div>
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Feiras</span>
+            <h4>Eco-Inovação Escolar</h4>
+            <p>Projetos e maquetes focados em soluções ambientais para a região.</p>
+          </div>
+        </div>
+        
+        <!-- Item 5 -->
+        <div class="gallery-item" data-category="gincanas">
+          <div class="gallery-img-wrapper">
+            <div class="gallery-svg-art">
+              <i class="fa-solid fa-masks-theater"></i>
+            </div>
+          </div>
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Gincanas</span>
+            <h4>Apresentações Artísticas</h4>
+            <p>Espetáculo teatral e musical preparado pelos estudantes para somar pontos.</p>
+          </div>
+        </div>
+        
+        <!-- Item 6 -->
+        <div class="gallery-item" data-category="aulas">
+          <div class="gallery-img-wrapper">
+            <div class="gallery-svg-art">
+              <i class="fa-solid fa-code"></i>
+            </div>
+          </div>
+          <div class="gallery-overlay">
+            <span class="gallery-tag">Aulas Práticas</span>
+            <h4>Desenvolvimento Web</h4>
+            <p>Programação em laboratório para a construção deste portal colaborativo.</p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO DE INSCRIÇÃO -->
+  <section class="register-section" id="inscricoes">
+    <div class="container register-layout">
+      
+      <div class="register-info-panel">
+        <h3>Participe das Nossas Atividades</h3>
+        <p>
+          A participação nos eventos escolares promove a liderança, o trabalho colaborativo e o crescimento intelectual. Inscreva seu projeto de ciência ou sua equipe nas gincanas diretamente pelo nosso formulário e garanta sua credencial digital.
+        </p>
+        
+        <div class="register-features">
+          <div class="feat-item">
+            <div class="feat-icon-box">
+              <i class="fa-solid fa-award"></i>
+            </div>
+            <div class="feat-text">
+              <h4>Certificação de Horas</h4>
+              <p>Todas as inscrições validadas geram certificados de participação para atividades complementares.</p>
+            </div>
+          </div>
+          
+          <div class="feat-item">
+            <div class="feat-icon-box">
+              <i class="fa-solid fa-users"></i>
+            </div>
+            <div class="feat-text">
+              <h4>Trabalho em Equipe</h4>
+              <p>Monte seu grupo com até 5 integrantes e desenvolva habilidades de cooperação social.</p>
+            </div>
+          </div>
+          
+          <div class="feat-item">
+            <div class="feat-icon-box">
+              <i class="fa-solid fa-gift"></i>
+            </div>
+            <div class="feat-text">
+              <h4>Premiação e Reconhecimento</h4>
+              <p>Troféus, medalhas de honra ao mérito e brindes exclusivos para os projetos destaque.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="register-form-card">
+        <h3>Formulário de Inscrição</h3>
+        <form id="registration-form" novalidate>
+          
+          <div class="form-group">
+            <label class="form-label" for="reg-name">Nome do Participante (ou Líder)</label>
+            <input type="text" id="reg-name" class="form-control" placeholder="Digite seu nome completo" required />
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="reg-contact">E-mail para Contato</label>
+            <input type="email" id="reg-contact" class="form-control" placeholder="usuario.contato[at]exemplo.com" required />
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="reg-event">Escolha o Evento</label>
+            <select id="reg-event" class="form-control" required>
+              <option value="" disabled selected>Selecione um evento...</option>
+              <option value="Feira de Ciências e Tecnologia">Feira de Ciências e Tecnologia</option>
+              <option value="Gincana Cultural Furacão">Gincana Cultural Furacão</option>
+              <option value="Noite Tec Info">Noite Tec Info</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="reg-role">Categoria de Participação</label>
+            <select id="reg-role" class="form-control" required>
+              <option value="" disabled selected>Selecione seu perfil...</option>
+              <option value="Aluno">Aluno</option>
+              <option value="Professor">Professor</option>
+              <option value="Responsável / Familiar">Responsável / Familiar</option>
+            </select>
+          </div>
+          
+          <button type="submit" class="btn btn-primary btn-submit">
+            Confirmar Inscrição <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </form>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- SEÇÃO EQUIPE E CRÉDITOS -->
+  <section class="team-section" id="equipe">
+    <div class="container">
+      <h2>Equipe Furacão</h2>
+      <div class="team-grid">
+        
+        <!-- Membro 1: Nadir -->
+        <div class="team-card">
+          <div class="team-avatar">N</div>
+          <h4>Nadir</h4>
+          <span class="team-role">Gerente de Ideias</span>
+        </div>
+        
+        <!-- Membro 2: Adriana -->
+        <div class="team-card">
+          <div class="team-avatar">A</div>
+          <h4>Adriana</h4>
+          <span class="team-role">Construtora HTML</span>
+        </div>
+        
+        <!-- Membro 3: Rafael -->
+        <div class="team-card">
+          <div class="team-avatar">R</div>
+          <h4>Rafael</h4>
+          <span class="team-role">Estilista CSS</span>
+        </div>
+        
+        <!-- Membro 4: Marinalda -->
+        <div class="team-card">
+          <div class="team-avatar">M</div>
+          <h4>Marinalda</h4>
+          <span class="team-role">Desenvolvedora JS</span>
+        </div>
+        
+        <!-- Membro 5: Darlene -->
+        <div class="team-card">
+          <div class="team-avatar">D</div>
+          <h4>Darlene</h4>
+          <span class="team-role">Organização e Suporte</span>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <div class="logo-circle" style="width: 2rem; height: 2rem; font-size: 1rem;">
+          <i class="fa-solid fa-tornado"></i>
+        </div>
+        <span>Equipe Furacão</span>
+      </div>
+      <div class="footer-disclaimer">
+        <p>
+          Este site é um projeto acadêmico desenvolvido durante o Hackathon 2026 da turma P1 de Informática Subsequente da Escola de Ensino Técnico do Estado do Pará (EETEPA) Vilhena Alves, Belém-PA.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL: DETALHES DE EVENTOS -->
+  <div class="modal detail-modal" id="event-detail-modal">
+    <div class="modal-content-wrapper">
+      <button class="modal-close-btn" aria-label="Fechar modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="event-detail-header">
+        <div class="detail-date-badge" id="modal-event-date">
+          <span class="day">12</span>
+          <span class="month">Jun</span>
+        </div>
+        <div class="detail-header-info">
+          <h3 id="modal-event-title">Nome do Evento</h3>
+          <span class="detail-category-badge" id="modal-event-badge">Categoria</span>
+        </div>
+      </div>
+      <div class="detail-body">
+        <div class="detail-meta-row">
+          <div class="meta-col">
+            <span class="meta-label">Horário</span>
+            <span class="meta-val" id="modal-event-time">08:00 - 17:00</span>
+          </div>
+          <div class="meta-col">
+            <span class="meta-label">Local</span>
+            <span class="meta-val" id="modal-event-location">Localização</span>
+          </div>
+        </div>
+        <p class="detail-desc" id="modal-event-desc">
+          Descrição completa do evento escolar.
+        </p>
+        <div class="detail-schedule">
+          <h4>Programação</h4>
+          <ul class="schedule-list" id="modal-event-schedule">
+            <!-- Programação preenchida via Javascript -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: TICKET DE CONFIRMAÇÃO -->
+  <div class="modal" id="ticket-modal">
+    <div class="modal-content-wrapper">
+      <button class="modal-close-btn" aria-label="Fechar modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <h3 style="text-align: center; font-size: 1.4rem;">Inscrição Confirmada! 🎉</h3>
+      <p style="text-align: center; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem;">
+        Apresente sua credencial virtual no dia do evento para validar suas horas.
+      </p>
+      
+      <div class="ticket-wrapper">
+        <div class="ticket-header">
+          <h4>Credencial de Participante</h4>
+          <span class="ticket-badge" id="ticket-category">Aluno</span>
+        </div>
+        <div class="ticket-body">
+          <div class="ticket-info-grid">
+            <div class="ticket-field">
+              <span class="ticket-label">Nome Completo</span>
+              <span class="ticket-val" id="ticket-name">Seu Nome Aqui</span>
+            </div>
+            <div class="ticket-field">
+              <span class="ticket-label">Atividade</span>
+              <span class="ticket-val" id="ticket-event">Feira de Ciências</span>
+            </div>
+            <div class="ticket-field">
+              <span class="ticket-label">Código de Acesso</span>
+              <span class="ticket-val" id="ticket-code" style="font-family: monospace;">FUR-284910</span>
+            </div>
+          </div>
+          <div class="ticket-qr" id="ticket-qr-container">
+            <!-- QR code gerado dinamicamente em SVG -->
+          </div>
+        </div>
+        <div class="ticket-footer-msg">
+          <i class="fa-solid fa-circle-check"></i> Credencial Registrada com Sucesso
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: LIGHTBOX DA GALERIA -->
+  <div class="lightbox-modal" id="lightbox-modal">
+    <button class="modal-close-btn" style="position: fixed; top: 1.5rem; right: 1.5rem; width: 2.8rem; height: 2.8rem; font-size: 1.5rem; background: rgba(255,255,255,0.06); color: #fff;" aria-label="Fechar visualização">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <div class="lightbox-frame">
+      <!-- Imagem ou SVG clonada via JS -->
+    </div>
+    <div class="lightbox-caption">
+      <h4 id="lightbox-title">Título da Memória</h4>
+      <p id="lightbox-desc">Descrição e contextualização.</p>
+    </div>
+  </div>
+
+  <!-- Script Local -->
+  <script src="script.js"></script>
+</body>
 </html>
